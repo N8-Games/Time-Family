@@ -1,0 +1,31 @@
+import discord
+from discord.ext.commands import Bot
+from discord.ext import commands
+import asyncio
+import time
+
+Client = discord.Client()
+client = commands.Bot(command_prefix = "!")
+
+@client.event
+async def on_ready():
+    print("Bot is active and online")
+
+@client.event
+async def on_message(message):
+    if message.content == "!start":
+        await client.send_message(message.channel, "Welcome to the Time Family! Here, you can collaborate with players within our system. 
+
+        await client.send_message(message.channel, "Thank you for considering joining the family!\n\nPlease post a photo of your base and player profile for member verification or player examination. A Time Family leader will be with you as soon as possible. In the meantime, we encourage you to check out the following information:\n\nType the following commands to view clan information:\n!general\n!membership\n!war\n!games\n!useofdiscord\n\nView our website at: http://sites.google.com/view/timefamilycoc")
+    if message.content == "!general":
+        await client.send_message(message.channel, "General:\n\nOur clan system was established on June 17, 2017 with the formation of Time Splitters. We are a group of English speaking clashers that are mainly located in either the United Kingdom or the United States. Our primary focus is war, although we do allow variety within the clan.")
+    if message.content == "!membership":
+        await client.send_message(message.channel, "Membership:\n\nWe expect all members to remain active and loyal. Hopping is not allowed. We are 18+, although showing signs of maturity will override the age requirements. Our clan system also believes that communicating and being respectful will ultimately improve the relationships and strengths within our clans. Finally, we encourage members to actively donate and request as we do not have a true donation ratio established. Minimum for donations is 250 and a combined 1000 is expected.")
+    if message.content == "!war":
+        await client.send_message(message.channel, "War:\n\nTwo attacks are a must each war. Members that fail to use both attacks must sit out the next war. We expect that members are responsible with opting in and out of war. This includes, but is not limited to: hero upgrades and expected absences. It is important to note that we do not assign numbers, but expect members to attack within their town hall range and strive for three star attacks.")
+    if message.content == "!games":
+        await client.send_message(message.channel, "Games:\n\nWe highly encourage members to participate in clan games. With massive rewards at stake, our members typically seek max scores. As it is important to note, members that do not participate in clan games may receive the boot at the end of the event. Therefore, show support and gaina as many points as possible!")
+    if message.content == "!useofdiscord":
+        await client.send_message(message.channel, "Use of Discord:\n\nDiscord plays a major role in the success of our clan. We post important updates, create war plans, deconstruct bases, and hold meetings within our High Council, a body consisting of all of the clan leaders. Not in the High Council? Please make suggestions that will improve your clan experience.")
+
+client.run("https://discordapp.com/api/webhooks/455382837034745859/roIiwUpUkDdRw2OY6ZcJvqeVPxIyKCzE5DxRhad9VKSReMflKcASYomN5zYme254fo5g")
